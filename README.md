@@ -116,5 +116,3 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 2. 그 폴더에서 `claude`를 열고 "START.md대로 볼트 세팅해줘"라고 한다.
 3. Obsidian에서 새 볼트 폴더를 열고, 커뮤니티 플러그인 `Calendar` · `Periodic Notes`를 설치해 켠다. 설정값은 `.obsidian/plugins/*/data.json`에 이미 들어 있다.
 4. 이후에는 볼트 폴더에서 `claude`를 열고 "오늘 할 일 없어?"로 시작한다.
-
-손으로 하려면 `vault-template/`을 원하는 곳에 복사하고 `START.md` 3~5단계를 직접 한다.
