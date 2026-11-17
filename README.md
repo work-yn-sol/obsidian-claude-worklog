@@ -5,6 +5,7 @@ AI가 다음 날에도 이어서 일하게 하는 업무 기록 구조.
 - `vault-template/`은 바로 쓸 수 있는 볼트 틀이다. 내용은 비어 있다.
 - `examples/`는 채운 모습을 보여 주는 가상 예시다(프로젝트 하나, 일지 하나).
 - 시작하는 법은 맨 아래 [시작하기](#시작하기).
+- 확인한 환경: Windows + WSL(Ubuntu)에서 Claude Code를 쓰는 경우만. Windows · macOS에서 Claude Code를 바로 쓰는 경우는 확인하지 않았다.
 
 ## 1. 핵심 아이디어
 
@@ -17,7 +18,7 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 
 ```
  [Obsidian 업무 볼트]  ← 사람이 보고 메모
-   Windows 폴더  =  WSL 경로 (같은 폴더)
+   볼트 폴더 하나 (WSL을 쓰면 Windows 경로 = WSL 경로)
         │  지금.md · 할일.md를 불러옴(@import)
         ▼
  [작업 저장소 CLAUDE.md]
@@ -59,7 +60,9 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 ## 4. 연결 방식
 
 - 세션 시작: 작업 저장소의 `CLAUDE.md`에 `@<볼트>/프로젝트/<과제>/지금.md`와 `할일.md`를 적어 둔다. Claude Code를 열면 두 파일이 자동으로 읽혀서 "오늘 할 일 없어?"에 바로 답한다.
-- 같은 폴더: Windows의 Obsidian 볼트와 WSL 경로가 같은 폴더다. 사람이 Obsidian에서 고친 내용을 Claude가 바로 본다.
+- 같은 폴더: Obsidian과 Claude Code가 같은 볼트 폴더를 연다. 사람이 Obsidian에서 고친 내용을 Claude가 바로 본다.
+  - Windows · macOS에서 Claude Code를 바로 쓰면 경로가 하나다.
+  - Windows에서 Claude Code를 WSL로 쓰면 같은 폴더를 두 경로로 본다. Obsidian은 `C:\…\볼트`, Claude Code는 `/mnt/c/…/볼트`.
 - 이력: Claude가 기록을 고치면 작업 단위로 git 커밋한다.
 
 ## 5. 한 정보는 한 곳에만
@@ -103,7 +106,7 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 
 ## 시작하기
 
-준비: Obsidian, Claude Code, git.
+준비: Obsidian, Claude Code, git. Windows에서 WSL 없이 쓰면 Git for Windows를 설치한다.
 
 1. 이 저장소를 받는다: `git clone https://github.com/work-yn-sol/obsidian-claude-worklog`
 2. 그 폴더에서 `claude`를 열고 "START.md대로 볼트 세팅해줘"라고 한다.
