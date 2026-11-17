@@ -108,6 +108,10 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 
 준비: Obsidian, Claude Code, git. Windows에서 WSL 없이 쓰면 Git for Windows를 설치한다.
 
+가장 쉬운 방법: 원하는 폴더에서 `claude`를 열고 "https://github.com/work-yn-sol/obsidian-claude-worklog 받아서 START.md대로 볼트 세팅해줘"라고 한다.
+
+직접 하려면:
+
 1. 이 저장소를 받는다: `git clone https://github.com/work-yn-sol/obsidian-claude-worklog`
 2. 그 폴더에서 `claude`를 열고 "START.md대로 볼트 세팅해줘"라고 한다.
 3. Obsidian에서 새 볼트 폴더를 열고, 커뮤니티 플러그인 `Calendar` · `Periodic Notes`를 설치해 켠다. 설정값은 `.obsidian/plugins/*/data.json`에 이미 들어 있다.
