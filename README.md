@@ -18,15 +18,14 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 
 ```
  [Obsidian 업무 볼트]  ← 사람이 보고 메모
-   볼트 폴더 하나 (WSL을 쓰면 Windows 경로 = WSL 경로)
-        │  지금.md · 할일.md를 불러옴(@import)
+        │  같은 폴더
         ▼
- [작업 저장소 CLAUDE.md]
-        │  Claude Code 세션 시작 시 자동으로 읽힘
-        ▼
- [Claude Code]  ── 코드 작업 ──▶ 작업 저장소
+ [Claude Code]  볼트 폴더에서 연다. 볼트 CLAUDE.md가 자동으로 읽힘
         │
         └─ 일지 · 할 일 · 결정 기록을 볼트에 쓰고 git 커밋
+
+ (선택) 코드 작업 저장소에서 일할 때:
+   저장소 CLAUDE.md가 볼트의 지금.md · 할일.md를 불러옴(@import)
 
  받은 자료 원본: 볼트 밖 자료 폴더 (볼트에는 링크만)
 ```
@@ -59,10 +58,11 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 
 ## 4. 연결 방식
 
-- 세션 시작: 작업 저장소의 `CLAUDE.md`에 `@<볼트>/프로젝트/<과제>/지금.md`와 `할일.md`를 적어 둔다. Claude Code를 열면 두 파일이 자동으로 읽혀서 "오늘 할 일 없어?"에 바로 답한다.
+- 기본: 볼트 폴더에서 `claude`를 연다. 볼트 `CLAUDE.md`가 읽히고, "오늘 할 일 없어?"라고 하면 진행 중 프로젝트의 `지금.md` · `할일.md`를 읽고 답한다.
 - 같은 폴더: Obsidian과 Claude Code가 같은 볼트 폴더를 연다. 사람이 Obsidian에서 고친 내용을 Claude가 바로 본다.
-  - Windows · macOS에서 Claude Code를 바로 쓰면 경로가 하나다.
-  - Windows에서 Claude Code를 WSL로 쓰면 같은 폴더를 두 경로로 본다. Obsidian은 `C:\…\볼트`, Claude Code는 `/mnt/c/…/볼트`.
+- 선택: 코드 작업 저장소에서 Claude Code를 쓰면, 그 저장소 `CLAUDE.md`에 `@<볼트>/프로젝트/<과제>/지금.md`와 `할일.md`를 적어 둔다. 세션을 열 때 두 파일이 자동으로 읽힌다.
+  - Windows는 `@~/…`처럼 `~/`로 시작한다. WSL은 같은 폴더를 `/mnt/c/…`로 본다.
+  - 볼트가 저장소 밖이라 첫 세션에 외부 파일 불러오기 승인 창이 뜬다. 허용한다.
 - 이력: Claude가 기록을 고치면 작업 단위로 git 커밋한다.
 
 ## 5. 한 정보는 한 곳에만
@@ -110,7 +110,7 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 
 1. 이 저장소를 받는다: `git clone https://github.com/work-yn-sol/obsidian-claude-worklog`
 2. 그 폴더에서 `claude`를 열고 "START.md대로 볼트 세팅해줘"라고 한다.
-3. 다음 Claude Code 세션 시작 때 "외부 파일 불러오기" 승인 창이 뜨면 허용한다. 볼트가 작업 저장소 밖에 있어서 뜬다.
-4. Obsidian에서 새 볼트 폴더를 열고, 커뮤니티 플러그인 `Calendar` · `Periodic Notes`를 설치해 켠다. 설정값은 `.obsidian/plugins/*/data.json`에 이미 들어 있다.
+3. Obsidian에서 새 볼트 폴더를 열고, 커뮤니티 플러그인 `Calendar` · `Periodic Notes`를 설치해 켠다. 설정값은 `.obsidian/plugins/*/data.json`에 이미 들어 있다.
+4. 이후에는 볼트 폴더에서 `claude`를 열고 "오늘 할 일 없어?"로 시작한다.
 
 손으로 하려면 `vault-template/`을 원하는 곳에 복사하고 `START.md` 3~5단계를 직접 한다.
