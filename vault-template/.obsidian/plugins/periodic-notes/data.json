@@ -1,0 +1,10 @@
+{
+  "showGettingStartedBanner": false,
+  "hasMigratedDailyNoteSettings": true,
+  "hasMigratedWeeklyNoteSettings": true,
+  "daily": {"format": "YYYY-MM-DD", "template": "Templates/일지", "folder": "일지/To_Process", "enabled": true},
+  "weekly": {"format": "gggg-[W]ww", "template": "Templates/주간", "folder": "주간", "enabled": true},
+  "monthly": {"format": "", "template": "", "folder": "", "enabled": false},
+  "quarterly": {"format": "", "template": "", "folder": "", "enabled": false},
+  "yearly": {"format": "", "template": "", "folder": "", "enabled": false}
+}
