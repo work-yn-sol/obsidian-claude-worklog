@@ -113,6 +113,7 @@ Claude는 세션이 끝나면 대화를 기억하지 못한다. 업무 상태를
 직접 하려면:
 
 1. 이 저장소를 받는다: `git clone https://github.com/work-yn-sol/obsidian-claude-worklog`
-2. 그 폴더에서 `claude`를 열고 "START.md대로 볼트 세팅해줘"라고 한다.
+2. 그 폴더에서 `claude`를 열고 "START.md대로 볼트 세팅해줘"라고 한다. 묻지 않고 기본 경로(사용자 폴더 아래 `Work`)에 볼트를 만든다.
 3. Obsidian에서 새 볼트 폴더를 열고, 처음 뜨는 제한 모드 창에서 '커뮤니티 플러그인 켜기'(이 볼트 신뢰)를 누른다. `Calendar` 1.5.10 · `Periodic Notes` 0.0.17은 `.obsidian/plugins/`에 설정값과 함께 들어 있다(MIT, 저작권 Liam Cain, 각 폴더 `LICENSE`).
-4. 이후에는 볼트 폴더에서 `claude`를 열고 "오늘 할 일 없어?"로 시작한다.
+4. 볼트 폴더에서 `claude`를 처음 열면 소속 · 첫 프로젝트 · 자료 폴더 같은 정보를 묻는다. 모르는 것은 "나중에"라고 하면 된다.
+5. 이후에는 볼트 폴더에서 `claude`를 열고 "오늘 할 일 없어?"로 시작한다.
